@@ -1,2 +1,10 @@
 df.columns=[col.lower().replace(" ","_") for col in df.columns]                                                                        # Convert column names to a common format: all lowercase and joined by "_"
 df.columns
+
+
+# remove the $ sign and unwanted characters from the records
+df["service_fee"] = df["service_fee"].apply(lambda x: remove_dollar_sign(x))
+
+
+# convert this column to date time object
+df["last_review"] = pd.to_datetime(df["last_review"])
