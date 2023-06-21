@@ -28,6 +28,10 @@ df.unique()
 
 
 
+df.select_dtypes(include = 'number')                                                                   # Βλεπω στηλες με numerical dtypes only.
+df.select_dtypes(exclude = 'number')                                                                   # Βλεπω στηλες με categorical dtypes only.
+
+
 
 
 
