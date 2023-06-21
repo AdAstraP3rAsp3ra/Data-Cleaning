@@ -25,4 +25,11 @@ df.value_counts(subset=None, normalize=False, sort=True, ascending=False, dropna
 df.corr()
 df.nunique()                                                               
 df.unique()
+
+
+
+
+
+
+msno.bar(df)
 msno.matrix(df)
