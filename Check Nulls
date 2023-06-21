@@ -1,3 +1,6 @@
 for col in df.columns:
     pct_missing = df[col].isnull().mean()
     print(f'{col} - {pct_missing :.1%}')
+
+for col in df.columns:
+    print(col, df[col].isnull().sum())
