@@ -1,1 +1,5 @@
-df.head() # Returns the first n rows of the DataFrame to get a quick overview of the data.
+df.head(): Returns the first n rows of the DataFrame to get a quick overview of the data.
+info(): Provides information about the DataFrame, including column names, data types, and missing values.
+describe(): Generates descriptive statistics for numerical columns, such as count, mean, min, max, etc.
+shape: Returns the dimensions (number of rows and columns) of the DataFrame.
+columns: Retrieves the column names of the DataFrame.
