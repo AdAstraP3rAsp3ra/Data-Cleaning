@@ -3,7 +3,7 @@ info():                                                                         
 describe():                                                                                           # Generates descriptive statistics for numerical columns, such as count, mean, min, max, etc.
 shape:                                                                                                # Returns the dimensions (number of rows and columns) of the DataFrame.
 columns:                                                                                              # Retrieves the column names of the DataFrame.
-for col in df.columns:                                                                                #Finds % of nulls per columns
+for col in df.columns:                                                                                # Finds % of nulls per columns
     pct_missing = df[col].isnull().mean()
     print(f'{col} - {pct_missing :.1%}')
 
