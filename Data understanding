@@ -18,8 +18,9 @@ percentage_result.reset_index(drop=True, inplace=True)
 percentage_result
 
 
-
+df.isnull().sum().sort_values(ascending=False)
 df.isnull().sum()
+
 df.value_counts(subset=None, normalize=False, sort=True, ascending=False, dropna=True)[source]        # Return a Series containing counts of unique rows in the DataFrame.
 df.corr()
 df.nunique()                                                               
