@@ -1,0 +1,3 @@
+for col in df.columns:
+    pct_missing = df[col].isnull().mean()
+    print(f'{col} - {pct_missing :.1%}')
