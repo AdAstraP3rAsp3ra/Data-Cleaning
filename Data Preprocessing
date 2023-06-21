@@ -8,3 +8,13 @@ df["service_fee"] = df["service_fee"].apply(lambda x: remove_dollar_sign(x))
 
 # convert this column to date time object
 df["last_review"] = pd.to_datetime(df["last_review"])
+# Let's check the min and max timestamps
+df['last review'].min(), df['last review'].max()
+
+
+# drop the 'license' column
+df.drop('license', axis=1, inplace=True)
+
+# Checking Duplicates:
+dp=df.duplicated()
+dp.value_counts()
