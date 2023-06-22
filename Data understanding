@@ -1,39 +1,18 @@
-df.head():                                                                                            # Returns the first n rows of the DataFrame to get a quick overview of the data.
-info():                                                                                               # Provides information about the DataFrame, including column names, data types, and missing values.
-describe():                                                                                           # Generates descriptive statistics for numerical columns, such as count, mean, min, max, etc.
-shape:                                                                                                # Returns the dimensions (number of rows and columns) of the DataFrame.
-columns:                                                                                              # Retrieves the column names of the DataFrame.
-for col in df.columns:                                                                                # Finds % of nulls per columns
-    pct_missing = df[col].isnull().mean()
-    print(f'{col} - {pct_missing :.1%}')
-or 
-
-## Count the missing values of every column in terms of % and show the result
-
-# calculate the % missing values
-percentage_result = df.isnull().sum()/df.shape[0] * 100
-# create a DataFrame to show case the result
-percentage_result = pd.DataFrame({"columns": percentage_result.keys(), "%": percentage_result})
-percentage_result.reset_index(drop=True, inplace=True)
-percentage_result
-
-
-df.isnull().sum().sort_values(ascending=False)
-df.isnull().sum()
-
-df.value_counts(subset=None, normalize=False, sort=True, ascending=False, dropna=True)[source]        # Return a Series containing counts of unique rows in the DataFrame.
-df.corr()
-df.nunique()                                                               
-df.unique()
-
-
-
-df.select_dtypes(include = 'number')                                                                   # Βλεπω στηλες με numerical dtypes only.
-df.select_dtypes(exclude = 'number')                                                                   # Βλεπω στηλες με categorical dtypes only.
-
-
-
-
+def check_data(df):
+    print(80 * "*")
+    print('DIMENSION: ({}, {})'.format(df.shape[0], df.shape[1]))
+    print(80 * "*")
+    print("COLUMNS:\n")
+    print(df.columns.values)
+    print(80 * "*")
+    print("DATA INFO:\n")
+    print(df.dtypes)
+    print(80 * "*")
+    print("MISSING VALUES:\n")
+    print(df.isnull().sum())
+    print(80 * "*")
+    print("NUMBER OF UNIQUE VALUES:\n")
+    print(df.nunique())
 
 msno.bar(df)
 msno.matrix(df)
