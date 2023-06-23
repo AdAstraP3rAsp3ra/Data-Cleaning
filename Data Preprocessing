@@ -25,6 +25,7 @@ df.sort_values(by='column1',ascending=False)
 
 df["column"].str.strip("-_/.")                                                                           # Removes -, _, /, ., from every row in column
 ===============================================================================================================================================================================
+# Check how many and which values are in each column in the dataframe
 for column in df.columns:
     value_counts = final_df[column].value_counts()
     print(f"Column: {column}")
