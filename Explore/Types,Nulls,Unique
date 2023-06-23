@@ -10,3 +10,14 @@ def resumetable(df):
     
     return summary
 resumetable(df)
+===============================================================================================================================================================================
+def summary(df):
+    print(f"Dataset has {df.shape[1]} features and {df.shape[0]} examples.")
+    summary = pd.DataFrame(index=df.columns)
+    summary["Unique"] = df.nunique().values
+    summary["Missing"] = df.isnull().sum().values
+    summary["Duplicated"] = df.duplicated().sum()
+    summary["Types"] = df.dtypes
+    return summary
+
+summary(df)
