@@ -1,1 +1,2 @@
-
+# Assuming your DataFrame is named 'df' and the column name is 'column_name' replace EN with entry level
+df['column_name'] = df['column_name'].replace('EN', 'entry level')
