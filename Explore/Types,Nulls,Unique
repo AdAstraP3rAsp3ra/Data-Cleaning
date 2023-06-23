@@ -12,7 +12,7 @@ def resumetable(df):
 resumetable(df)
 ===============================================================================================================================================================================
 def summary(df):
-    print(f"Dataset has {df.shape[1]} features and {df.shape[0]} examples.")
+    print(f"Dataset has {df.shape[1]} columns and {df.shape[0]} rows.")
     summary = pd.DataFrame(index=df.columns)
     summary["Unique"] = df.nunique().values
     summary["Missing"] = df.isnull().sum().values
