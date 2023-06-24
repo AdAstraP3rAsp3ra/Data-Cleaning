@@ -1,0 +1,8 @@
+# Convert "OCCUR_TIME" column to datetime
+finaldf['OCCUR_TIME'] = pd.to_datetime(finaldf['OCCUR_TIME'], format='%H:%M:%S')
+
+# Extract the hour component
+finaldf['OCCUR_HOUR'] = finaldf['OCCUR_TIME'].dt.hour
+
+# Create a histogram with 24 bins
+sns.histplot(data=finaldf, x='OCCUR_HOUR', bins=24)
