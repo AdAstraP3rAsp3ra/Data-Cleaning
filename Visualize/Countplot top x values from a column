@@ -1,1 +1,1 @@
-
+sns.countplot(y= "company_location", data=df2, order=df2.company_location.value_counts().iloc[:10].index)
