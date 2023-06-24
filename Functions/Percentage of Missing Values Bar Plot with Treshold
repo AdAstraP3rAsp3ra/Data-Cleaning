@@ -1,1 +1,27 @@
-
+def percent_hbar(df, old_threshold=None):
+    percent_of_nulls = (df.isnull().sum()/len(df)*100).sort_values().round(2)
+    threshold = percent_of_nulls.mean()
+    ax = percent_of_nulls.plot(kind='barh', figsize=(20, 16), title='% of NaN (from {} lines)'.format(len(df)), 
+                               color='#86bf91', legend=False, fontsize=17)
+    ax.set_xlabel('Count of NaN')
+    dict_percent = dict(percent_of_nulls)
+    i = 0
+    for k in dict_percent:
+        color = 'blue'
+        if dict_percent[k] > 0:
+            if dict_percent[k] > threshold:
+                color = 'red'
+            ax.text(dict_percent[k]+0.1, i + 0.09, str(dict_percent[k])+'%', color=color, 
+                    fontweight='bold', fontsize='large')
+        i += 0.98
+    if old_threshold is not None:
+        plt.axvline(x=old_threshold,linewidth=1, color='r', linestyle='--')
+        ax.text(old_threshold+0.3, .10, '{0:.2%}'.format(old_threshold/100), color='r', fontweight='bold', fontsize='large')
+        plt.axvline(x=threshold,linewidth=1, color='green', linestyle='--')
+        ax.text(threshold+0.3, .7, '{0:.2%}'.format(threshold/100), color='green', fontweight='bold', fontsize='large')
+    else:
+        plt.axvline(x=threshold,linewidth=1, color='r', linestyle='--')
+        ax.text(threshold+0.3, .7, '{0:.2%}'.format(threshold/100), color='r', fontweight='bold', fontsize='large')
+    ax.set_xlabel('')
+    return ax, threshold
+percent_hbar(df, old_threshold=None)
