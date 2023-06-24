@@ -1,1 +1,2 @@
-
+# Remove column name 'A'
+df.drop(['A'], axis=1)
