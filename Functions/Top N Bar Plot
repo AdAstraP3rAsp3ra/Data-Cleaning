@@ -1,0 +1,18 @@
+def barplot_best_10(df,X,Y,xlabel,ylabel,N,title):
+    df=df.sort_values(Y,ascending= True)
+    df=df[df[Y]>1]
+    n = list(df[X])
+    s = list(df[Y].astype(int))
+    plt.figure(figsize=(16, 8))
+    plt.xticks(rotation=75, fontsize=12);
+    ax = plt.bar(n,s)
+    plt.title(title,fontsize=15)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    for i in range(len(s)):
+        plt.annotate(str(s[i]), xy=(n[i],s[i]), ha='center', va='bottom',rotation=75)
+    for i in range(len(s)-N,len(s)):
+        ax.patches[i].set_facecolor('#aa3333')
+    plt.show()
+    
+    return  n[len(n)-N-1:]
