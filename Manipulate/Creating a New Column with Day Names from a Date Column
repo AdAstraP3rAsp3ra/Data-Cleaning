@@ -1,0 +1,5 @@
+# Convert "column" column to datetime format
+df['column'] = pd.to_datetime(df['column'])
+
+# Create new column with the day name
+df['day_of_week'] = df['column'].dt.day_name()
