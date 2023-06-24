@@ -1,0 +1,5 @@
+# Define the values to delete
+values_to_delete = ['(nulll)', 'unknown', 'missing']
+
+# Delete rows with specific values in the specified column
+df = df.loc[~df['column'].isin(values_to_delete)]
