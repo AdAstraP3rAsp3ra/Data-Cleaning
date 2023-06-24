@@ -1,2 +1,6 @@
 # Assuming your DataFrame is called 'df' and the column name is 'column_name'
 df.dropna(subset=['column_name'], inplace=True)
+=============================================================================================================================================================================
+# Assuming your DataFrame is called 'df' and you want to drop rows with missing values in columns 'column1', 'column2', and 'column3'
+columns_to_check = ['column1', 'column2', 'column3']
+df.dropna(subset=columns_to_check, inplace=True)
