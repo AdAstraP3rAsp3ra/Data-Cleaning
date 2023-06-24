@@ -1,0 +1,2 @@
+# Assuming your DataFrame is called 'df' and the column name is 'column_name'
+df.dropna(subset=['column_name'], inplace=True)
