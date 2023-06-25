@@ -1,0 +1,19 @@
+# Creaatin a function to show the quarters of the year
+def quarter(df, col_name):
+    """This function creates a column categorizing dates by the quater of the year"""
+    list_hold = df[col_name]
+    fod_hold = []
+    for quart in list_hold:
+        if quart <= 3:
+            fod_hold.append('Q1')
+        elif quart >= 4 and quart <=6:
+            fod_hold.append('Q2')
+        elif quart >= 7 and quart <= 9:
+            fod_hold.append('Q3')
+        else:
+            fod_hold.append('Q4')
+    return fod_hold
+
+# Creating the qurter column
+desd = list(quarter(df, 'month'))    # Column "month" with the number of each month must exist
+df['Quarter'] = desd
