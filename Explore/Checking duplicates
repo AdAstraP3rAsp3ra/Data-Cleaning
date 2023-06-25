@@ -1,0 +1,4 @@
+# Checking if there are duplicates in the data
+cols_list = df.columns
+duplicates = df.duplicated(subset= cols_list, keep = False)
+df[duplicates].sort_values('Description')
