@@ -1,0 +1,11 @@
+def count_duplicate_rows(df):
+    duplicate_rows = df[df.duplicated()]
+    
+    if not duplicate_rows.empty:
+        print("Duplicate rows found in the dataframe.")
+        count = len(duplicate_rows)
+        print(f"Count of duplicate rows: {count}.")
+    else:
+        print("No duplicate rows found in the dataframe.")
+
+    return df
