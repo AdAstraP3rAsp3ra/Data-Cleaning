@@ -1,0 +1,7 @@
+# Understand your variables
+variables = pd.DataFrame(columns=['Variable','Number of unique values','Values'])
+
+for i, var in enumerate(df.columns):
+    variables.loc[i] = [var, df[var].nunique(), df[var].unique().tolist()]
+    
+variables
