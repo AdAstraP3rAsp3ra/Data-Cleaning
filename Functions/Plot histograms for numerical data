@@ -1,0 +1,20 @@
+def plot_histograms(df_train, df_test, original, target_col, n_cols=3):
+    n_rows = (len(df_train.columns) - 1) // n_cols + 1
+
+    fig, axes = plt.subplots(nrows=n_rows, ncols=n_cols, figsize=(18, 4*n_rows))
+    axes = axes.flatten()
+
+    for i, var_name in enumerate(df_train.columns.tolist()):
+        if var_name != 'is_generated':
+            ax = axes[i]
+            sns.distplot(df_train[var_name], kde=True, ax=ax, label='Train')
+            if var_name != target_col:
+                sns.distplot(df_test[var_name], kde=True, ax=ax, label='Test')
+            sns.distplot(original[var_name], kde=True, ax=ax, label='Original')
+            ax.set_title(f'{var_name} Distribution (Train vs Test)')
+            ax.legend()
+
+    plt.tight_layout()
+    plt.show()
+        
+plot_histograms(df_train[num_cols], df_test[num_cols], original[num_cols], target_col, n_cols=3)
