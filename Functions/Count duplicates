@@ -9,3 +9,5 @@ def count_duplicate_rows(df):
         print("No duplicate rows found in the dataframe.")
 
     return df
+
+count_duplicate_rows(df)
