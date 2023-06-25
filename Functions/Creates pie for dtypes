@@ -1,0 +1,10 @@
+# Visualize the datatypes
+plt.rcParams.update({'font.size': 10})
+
+df.dtypes.value_counts().plot.pie(explode=[0.1, 0.1],  # number of dtypes
+                                       autopct='%1.2f%%',
+                                       shadow=True)
+plt.title('Data Type',
+          color='Green',
+          loc='center',
+          font='Times New Roman');
