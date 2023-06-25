@@ -1,4 +1,4 @@
-cat_cols = [""]
+cat_cols = df.select_dtypes(include='object').columns
 plt.figure(figsize=(14,9))
 for idx,column in enumerate(cat_cols):
     plt.subplot(4,2,idx+1)
