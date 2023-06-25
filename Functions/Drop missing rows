@@ -1,0 +1,10 @@
+def drop_missing_rows(df):
+    if df.isnull().any().any():
+        print("Missing values found in the dataframe.")
+        df = df.dropna(axis=0)
+        dropped_rows = len(df) - len(df.dropna())
+        print(f"Dropped {dropped_rows} rows.")
+    else:
+        print("No missing values found in the dataframe.")
+
+    return df
