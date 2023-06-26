@@ -1,0 +1,10 @@
+# Convert the column to numeric with errors='coerce'
+df['price_in_euro'] = pd.to_numeric(df['price_in_euro'], errors='coerce')
+
+# Count the number of rows with numeric and non-numeric values
+num_numeric = df['price_in_euro'].notnull().sum()
+num_non_numeric = df['price_in_euro'].isnull().sum()
+
+# Print the counts
+print(f"Number of rows with numeric values: {num_numeric}")
+print(f"Number of rows with non-numeric values: {num_non_numeric}")
