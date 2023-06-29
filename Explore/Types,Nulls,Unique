@@ -16,6 +16,7 @@ def summary(df):
     summary = pd.DataFrame(index=df.columns)
     summary["Unique"] = df.nunique().values
     summary["Missing"] = df.isnull().sum().values
+    summary["Missing %"] = df.isnull().sum() / len(df) * 100
     summary["Duplicated"] = df.duplicated().sum()
     summary["Types"] = df.dtypes
     return summary
