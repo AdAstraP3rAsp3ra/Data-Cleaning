@@ -1,16 +1,3 @@
-def resumetable(df):
-    print(f"Dataset Shape: {df.shape}")
-    summary = pd.DataFrame(df.dtypes,columns=['dtypes'])
-    summary = summary.reset_index()
-    summary['Name'] = summary['index']
-    summary = summary[['Name','dtypes']]
-    summary['Missing'] = df.isnull().sum().values    
-    summary['Uniques'] = df.nunique().values
-
-    
-    return summary
-resumetable(df)
-===============================================================================================================================================================================
 def summary(df):
     print(f"Dataset has {df.shape[1]} columns and {df.shape[0]} rows.")
     summary = pd.DataFrame(index=df.columns)
