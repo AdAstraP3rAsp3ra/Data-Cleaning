@@ -1,2 +1,0 @@
-print("Percentage null or na values in df")
-((data.isnull() | data.isna()).sum() * 100 / data.index.size).round(2)
